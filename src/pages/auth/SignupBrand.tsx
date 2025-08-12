@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const SignupBrand = () => {
   const nav = useNavigate();
@@ -19,6 +20,20 @@ const SignupBrand = () => {
   return (
     <main className="container py-8 grid md:grid-cols-2 gap-6">
       <section>
+        <div className="flex items-center gap-4 mb-4 text-sm">
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 rounded-full bg-primary" />
+            <span>Step 1: Profile Info</span>
+          </div>
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="h-2 w-2 rounded-full bg-muted" />
+            <span>Step 2: Preferences</span>
+          </div>
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="h-2 w-2 rounded-full bg-muted" />
+            <span>Step 3: Complete</span>
+          </div>
+        </div>
         <h1 className="text-3xl font-semibold mb-4">Create Your Brand Profile</h1>
         <p className="text-muted-foreground mb-6">Let’s help you find the right creators for your budget.</p>
         <Card>
@@ -37,7 +52,16 @@ const SignupBrand = () => {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="budget">Typical monthly ad budget</Label>
-                <Input id="budget" placeholder="₦100,000 – ₦500,000" />
+                <Select>
+                  <SelectTrigger id="budget">
+                    <SelectValue placeholder="Select range" />
+                  </SelectTrigger>
+                  <SelectContent className="z-50 bg-popover">
+                    <SelectItem value="lt100k">Less than ₦100,000</SelectItem>
+                    <SelectItem value="100k-500k">₦100,000 – ₦500,000</SelectItem>
+                    <SelectItem value="500k-2m">₦500,000 – ₦2,000,000</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="goals">Campaign goals</Label>
@@ -45,7 +69,7 @@ const SignupBrand = () => {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="logo">Brand logo (URL for now)</Label>
-                <Input id="logo" placeholder="https://..." />
+                <Input id="logo" type="url" placeholder="https://..." />
               </div>
               <div className="pt-2 flex gap-3">
                 <Button type="submit" variant="hero">Submit</Button>

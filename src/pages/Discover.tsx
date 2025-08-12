@@ -4,6 +4,8 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { useEffect, useMemo, useState } from "react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Link } from "react-router-dom";
 
 interface Influencer {
   id: string;
@@ -31,6 +33,8 @@ const Discover = () => {
 
   useEffect(() => { document.title = "Discover Influencers — HiveSphere"; }, []);
 
+  const initials = (name: string) => name.split(' ').map(p => p[0]).join('').slice(0,2).toUpperCase();
+
   const results = useMemo(() => {
     return MOCK.filter((i) =>
       (!niche || i.niche.includes(niche)) &&
@@ -43,7 +47,7 @@ const Discover = () => {
 
   return (
     <main className="container py-8 grid md:grid-cols-[280px_1fr] gap-6">
-      <aside className="space-y-6">
+      <aside id="filters" className="space-y-6 md:sticky md:top-20">
         <Card>
           <CardHeader>
             <CardTitle>Filters</CardTitle>
@@ -76,18 +80,45 @@ const Discover = () => {
 
       <section aria-labelledby="results-title" className="space-y-4">
         <h1 id="results-title" className="text-2xl font-semibold">Influencers</h1>
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-muted-foreground">{results.length} result{results.length !== 1 ? 's' : ''}</p>
+          <div className="flex items-center gap-2">
+            <Button asChild variant="outline" className="md:hidden">
+              <a href="#filters">Filters</a>
+            </Button>
+            <Button asChild variant="subtle" className="hidden md:inline-flex">
+              <Link to="/dashboard/brand?quickMatch=1">Quick Match</Link>
+            </Button>
+          </div>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {results.map((i) => (
             <Card key={i.id} className="hover:shadow-brand-glow transition-transform hover:-translate-y-0.5">
-              <CardHeader>
-                <CardTitle>{i.name}</CardTitle>
+              <CardHeader className="flex flex-row items-center gap-3">
+                <Avatar className="h-10 w-10">
+                  <AvatarFallback>{initials(i.name)}</AvatarFallback>
+                </Avatar>
+                <div>
+                  <CardTitle className="text-base">{i.name}</CardTitle>
+                  <p className="text-xs text-muted-foreground">{i.niche.join(", ")}</p>
+                </div>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground space-y-2">
-                <p>Niche: {i.niche.join(", ")}</p>
-                <p>Followers: {i.followers.toLocaleString()}</p>
-                <p>Engagement: {i.engagement}%</p>
-                <p>Price: ₦{i.price.toLocaleString()}</p>
-                <div className="pt-2">
+              <CardContent className="space-y-3">
+                <div className="grid grid-cols-3 gap-2 text-xs">
+                  <div className="rounded-md bg-muted/40 p-2">
+                    <div className="text-muted-foreground">Followers</div>
+                    <div className="font-medium">{i.followers.toLocaleString()}</div>
+                  </div>
+                  <div className="rounded-md bg-muted/40 p-2">
+                    <div className="text-muted-foreground">Engagement</div>
+                    <div className="font-medium">{i.engagement}%</div>
+                  </div>
+                  <div className="rounded-md bg-muted/40 p-2">
+                    <div className="text-muted-foreground">Price</div>
+                    <div className="font-medium">₦{i.price.toLocaleString()}</div>
+                  </div>
+                </div>
+                <div className="pt-1">
                   <Button variant="hero" size="sm">View Profile</Button>
                 </div>
               </CardContent>

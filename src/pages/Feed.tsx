@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Post { id: number; userType: "brand" | "influencer"; text: string; likes: number; }
 
 const Feed = () => {
-  const [filter, setFilter] = useState<"all" | "brand" | "influencer">("all");
+  const [filter, setFilter] = useState<"all" | "brand" | "influencer" | "trending">("all");
   const [posts, setPosts] = useState<Post[]>([
     { id: 1, userType: "influencer", text: "New rates for September! DM.", likes: 4 },
     { id: 2, userType: "brand", text: "Looking for Lagos food creators this weekend.", likes: 8 },
@@ -21,19 +22,26 @@ const Feed = () => {
     setText("");
   };
 
-  const visible = posts.filter(p => filter === 'all' ? true : p.userType === filter);
+  const visible = useMemo(() => {
+    if (filter === 'trending') return [...posts].sort((a,b)=>b.likes-a.likes);
+    return posts.filter(p => filter === 'all' ? true : p.userType === filter);
+  }, [posts, filter]);
 
   return (
     <main className="container py-8 max-w-2xl space-y-6">
-      <div className="flex items-center gap-3">
-        <Button variant={filter==='all' ? 'hero' : 'subtle'} onClick={()=>setFilter('all')}>All</Button>
-        <Button variant={filter==='brand' ? 'hero' : 'subtle'} onClick={()=>setFilter('brand')}>Brands</Button>
-        <Button variant={filter==='influencer' ? 'hero' : 'subtle'} onClick={()=>setFilter('influencer')}>Influencers</Button>
-      </div>
+      <Tabs value={filter} onValueChange={(v)=>setFilter(v as any)}>
+        <TabsList>
+          <TabsTrigger value="all">All</TabsTrigger>
+          <TabsTrigger value="brand">Brands</TabsTrigger>
+          <TabsTrigger value="influencer">Influencers</TabsTrigger>
+          <TabsTrigger value="trending">Trending</TabsTrigger>
+        </TabsList>
+      </Tabs>
 
       <Card className="p-4">
         <Input placeholder="Share something (max 280 chars)" value={text} onChange={(e)=>setText(e.target.value)} />
-        <div className="flex justify-end pt-3">
+        <div className="flex items-center justify-between pt-2">
+          <span className="text-xs text-muted-foreground">{text.length}/280</span>
           <Button variant="hero" onClick={add}>Post</Button>
         </div>
       </Card>

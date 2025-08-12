@@ -28,14 +28,14 @@ const Hero = () => {
             <img src="/lovable-uploads/cdd54ec3-f5f9-41e6-b03a-6bb6ec87bb79.png" alt="HiveSphere green logo wordmark" className="h-10 md:h-12 w-auto" />
           </div>
           <h1 id="hero-title" className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-            <span className="text-gradient-brand">Find Nigerian Micro & Nano Influencers</span>
+            <span className="text-gradient-brand">Start Matching Micro & Nano Influencers</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8">
             Fast discovery, simple campaign workflows, and friendly chat — built for budgets under ₦2,000,000.
           </p>
           <div className="flex items-center justify-center gap-3">
             <Button asChild variant="hero" size="xl">
-              <Link to="/discover">Find Influencers</Link>
+              <Link to="/discover">Start Matching Now</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link to="/campaigns/new">Create Campaign</Link>
