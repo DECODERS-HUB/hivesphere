@@ -15,7 +15,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/cdd54ec3-f5f9-41e6-b03a-6bb6ec87bb79.png" 
               alt="HiveSphere" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
 
