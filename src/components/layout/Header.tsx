@@ -11,10 +11,12 @@ const Header = () => {
           <img src="/lovable-uploads/cdd54ec3-f5f9-41e6-b03a-6bb6ec87bb79.png" alt="HiveSphere logo green" className="h-8 w-auto" />
           <span className="font-semibold">HiveSphere</span>
         </Link>
-        <div className="hidden md:flex items-center gap-4">
-          <NavLink to="/discover" className={({isActive}) => isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"}>Discover</NavLink>
-          <NavLink to="/feed" className={({isActive}) => isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"}>Community</NavLink>
-          <NavLink to="/messages" className={({isActive}) => isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"}>Messages</NavLink>
+        <div className="hidden md:flex items-center gap-6">
+          <NavLink to="/" className={({isActive}) => isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"}>Home</NavLink>
+          <a href="#about" className="text-muted-foreground hover:text-foreground">About</a>
+          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground">How It Works</a>
+          <a href="#pricing" className="text-muted-foreground hover:text-foreground">Pricing</a>
+          <a href="#contact" className="text-muted-foreground hover:text-foreground">Contact</a>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -52,11 +54,11 @@ const Header = () => {
           </DropdownMenu>
         </div>
         <div className="flex items-center gap-2">
-          <Button asChild variant="subtle">
-            <Link to="/signup-influencer">For Influencers</Link>
+          <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Link to="/signin">Sign In</Link>
           </Button>
-          <Button asChild variant="hero" size="sm">
-            <Link to="/signup-brand">For Brands</Link>
+          <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
+            <Link to="/register">Register</Link>
           </Button>
         </div>
       </nav>

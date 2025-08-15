@@ -16,11 +16,15 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Brand */
-    --brand: 152 63% 40%; /* Emerald */
-    --brand-2: 198 88% 48%; /* Azure */
-    --primary: var(--brand);
-    --primary-foreground: 210 40% 98%;
+    /* HiveSphere Brand Colors from provided palette */
+    --brand-dark-green: 124 29% 14%; /* #244223 */
+    --brand-light-green: 87 56% 57%; /* #6ECB3C */
+    --brand-bright-green: 81 67% 64%; /* #8CD737 */
+    --brand-charcoal: 117 18% 16%; /* #202E21 */
+    --brand-medium-green: 87 56% 49%; /* #58BE3E */
+    
+    --primary: var(--brand-bright-green);
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 97%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -28,22 +32,22 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 198 88% 48%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--brand-light-green);
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: var(--brand);
+    --ring: var(--brand-bright-green);
 
     --radius: 0.75rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: var(--brand);
+    --sidebar-primary: var(--brand-bright-green);
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
@@ -61,8 +65,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 152 63% 45%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--brand-bright-green);
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -70,19 +74,19 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 198 88% 55%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--brand-light-green);
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 152 63% 45%;
+    --ring: var(--brand-bright-green);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 152 63% 45%;
+    --sidebar-primary: var(--brand-bright-green);
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
@@ -103,16 +107,22 @@
 /* Utilities & component tokens */
 @layer utilities {
   .bg-gradient-brand {
-    background-image: linear-gradient(135deg, hsl(var(--brand)) 0%, hsl(var(--brand-2)) 100%);
+    background-image: linear-gradient(135deg, hsl(var(--brand-dark-green)) 0%, hsl(var(--brand-light-green)) 100%);
   }
   .text-gradient-brand {
-    background-image: linear-gradient(135deg, hsl(var(--brand)) 0%, hsl(var(--brand-2)) 100%);
+    background-image: linear-gradient(135deg, hsl(var(--brand-dark-green)) 0%, hsl(var(--brand-light-green)) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .shadow-brand-glow {
-    box-shadow: 0 10px 30px -10px hsl(var(--brand) / 0.35), 0 6px 18px -8px hsl(var(--brand-2) / 0.25);
+    box-shadow: 0 10px 30px -10px hsl(var(--brand-bright-green) / 0.35), 0 6px 18px -8px hsl(var(--brand-light-green) / 0.25);
+  }
+  .bg-gradient-hero {
+    background-image: linear-gradient(135deg, hsl(var(--brand-dark-green)) 0%, hsl(var(--brand-light-green)) 100%);
+  }
+  .bg-charcoal {
+    background-color: hsl(var(--brand-charcoal));
   }
 }
 
@@ -121,7 +131,7 @@
   .spotlight {
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), hsl(var(--brand) / 0.15), transparent 60%);
+    background: radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), hsl(var(--brand-bright-green) / 0.15), transparent 60%);
     pointer-events: none;
     transition: background 150ms ease-out;
   }

@@ -20,26 +20,30 @@ const Hero = () => {
   }, []);
 
   return (
-    <section aria-labelledby="hero-title" className="relative overflow-hidden">
+    <section aria-labelledby="hero-title" className="relative overflow-hidden bg-gradient-hero text-white">
       <div ref={ref} className="spotlight" />
-      <div className="container pt-16 pb-20 md:pt-24 md:pb-28 text-center">
-        <div className="mx-auto max-w-3xl">
-          <div className="flex justify-center mb-6">
-            <img src="/lovable-uploads/cdd54ec3-f5f9-41e6-b03a-6bb6ec87bb79.png" alt="HiveSphere green logo wordmark" className="h-10 md:h-12 w-auto" />
+      <div className="container pt-16 pb-20 md:pt-24 md:pb-28">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="text-left">
+            <h1 id="hero-title" className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              Where Brands Meet the Right Influencers
+            </h1>
+            <p className="text-lg md:text-xl mb-8 text-white/90">
+              Connect, Collaborate, and Grow your brand with verified influencers — all in one seamless platform.
+            </p>
+            <div className="flex items-start gap-4">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white">
+                <Link to="/register">Get Started</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                <a href="#how-it-works">Learn More</a>
+              </Button>
+            </div>
           </div>
-          <h1 id="hero-title" className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-            <span className="text-gradient-brand">Start Matching Micro & Nano Influencers</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8">
-            Fast discovery, simple campaign workflows, and friendly chat — built for budgets under ₦2,000,000.
-          </p>
-          <div className="flex items-center justify-center gap-3">
-            <Button asChild variant="hero" size="xl">
-              <Link to="/discover">Start Matching Now</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link to="/campaigns/new">Create Campaign</Link>
-            </Button>
+          <div className="hidden md:block">
+            <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center">
+              <div className="text-white/50 text-6xl">🤝</div>
+            </div>
           </div>
         </div>
       </div>

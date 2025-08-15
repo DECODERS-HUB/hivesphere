@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 import Discover from "./pages/Discover";
 import SignupInfluencer from "./pages/auth/SignupInfluencer";
 import SignupBrand from "./pages/auth/SignupBrand";
+import Register from "./pages/auth/Register";
+import SignIn from "./pages/auth/SignIn";
 import BrandDashboard from "./pages/dashboards/BrandDashboard";
 import InfluencerDashboard from "./pages/dashboards/InfluencerDashboard";
 import NewCampaign from "./pages/campaigns/NewCampaign";
@@ -28,6 +30,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/discover" element={<Discover />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/signup-influencer" element={<SignupInfluencer />} />
           <Route path="/signup-brand" element={<SignupBrand />} />
           <Route path="/dashboard/brand" element={<BrandDashboard />} />
