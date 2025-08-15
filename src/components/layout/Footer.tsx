@@ -8,8 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/lovable-uploads/cdd54ec3-f5f9-41e6-b03a-6bb6ec87bb79.png" alt="HiveSphere logo" className="h-8 w-auto" />
-              <span className="font-semibold text-xl">HiveSphere</span>
+              <img src="/lovable-uploads/cdd54ec3-f5f9-41e6-b03a-6bb6ec87bb79.png" alt="HiveSphere logo" className="h-10 w-auto" />
             </div>
             <p className="text-white/80 mb-6 max-w-md">
               Connecting Nigerian brands with authentic micro and nano influencers. 
@@ -54,7 +53,7 @@ const Footer = () => {
         
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 text-sm">
-            © 2024 HiveSphere. All rights reserved.
+            © 2025 HiveSphere. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-white/60">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
