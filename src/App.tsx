@@ -8,8 +8,6 @@ import Index from "./pages/Index";
 import Onboarding from "./pages/Onboarding";
 import NotFound from "./pages/NotFound";
 import Discover from "./pages/Discover";
-import SignupInfluencer from "./pages/auth/SignupInfluencer";
-import SignupBrand from "./pages/auth/SignupBrand";
 import Register from "./pages/auth/Register";
 import SignIn from "./pages/auth/SignIn";
 import BrandDashboard from "./pages/dashboards/BrandDashboard";
@@ -35,15 +33,12 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<><Header /><Index /></>} />
           <Route path="/discover" element={<Discover />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup-influencer" element={<SignupInfluencer />} />
-          <Route path="/signup-brand" element={<SignupBrand />} />
           <Route path="/dashboard/brand" element={<BrandDashboard />} />
           <Route path="/dashboard/brand/campaigns" element={<BrandCampaigns />} />
           <Route path="/dashboard/brand/discovery" element={<BrandDiscovery />} />
