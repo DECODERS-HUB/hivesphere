@@ -24,11 +24,8 @@ const Register = () => {
     
     toast({ title: "Welcome to HiveSphere!", description: "Your account has been created successfully." });
     
-    if (userType === "brand") {
-      nav("/signup-brand");
-    } else {
-      nav("/signup-influencer");
-    }
+    // Redirect to onboarding with selected role
+    nav(`/onboarding?role=${userType}`);
   };
 
   return (
