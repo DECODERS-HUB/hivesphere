@@ -18,9 +18,11 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Custom HiveSphere variants
-        hero: "bg-gradient-brand text-primary-foreground shadow-brand-glow hover:brightness-110 active:brightness-95",
+        // Corporate variants
+        hero: "bg-gradient-hero text-primary-foreground shadow-corporate hover:brightness-110 active:brightness-95",
         subtle: "bg-muted text-foreground hover:bg-muted/80",
+        corporate: "bg-evergreen text-primary-foreground hover:bg-evergreen/90 shadow-sm",
+        cta: "bg-amber-cta text-foreground hover:bg-amber-cta/90 shadow-sm font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

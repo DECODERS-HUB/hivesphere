@@ -2,96 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-/* HiveSphere Design System - All colors are HSL tokens */
+/* Corporate Design System - Muted Professional Palette */
 
 @layer base {
   :root {
-    /* Base */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Mode - Corporate Neutrals */
+    --background: 210 17% 98%; /* Alabaster #F8F9FA */
+    --foreground: 210 11% 15%; /* Charcoal #212529 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 17% 98%;
+    --card-foreground: 210 11% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 17% 98%;
+    --popover-foreground: 210 11% 15%;
 
-    /* HiveSphere Brand Colors from provided palette */
-    --brand-dark-green: 124 29% 14%; /* #244223 */
-    --brand-light-green: 87 56% 57%; /* #6ECB3C */
-    --brand-bright-green: 81 67% 64%; /* #8CD737 */
-    --brand-charcoal: 117 18% 16%; /* #202E21 */
-    --brand-medium-green: 87 56% 49%; /* #58BE3E */
+    /* Corporate Brand Colors */
+    --brand-evergreen: 140 25% 39%; /* Primary #4A7C59 */
+    --brand-evergreen-dark: 140 25% 31%; /* Dark #3B6247 */
+    --brand-evergreen-light: 140 18% 69%; /* Light #A3C4AC */
+    --brand-midnight: 210 50% 22%; /* Secondary #1D3557 */
+    --brand-clear-blue: 200 37% 44%; /* Accent #457B9D */
+    --brand-amber: 45 73% 67%; /* CTA #E9C46A */
     
-    --primary: var(--brand-bright-green);
-    --primary-foreground: 0 0% 100%;
+    --primary: var(--brand-evergreen);
+    --primary-foreground: 210 17% 98%;
 
-    --secondary: 210 40% 97%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 14% 94%;
+    --secondary-foreground: 210 11% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 14% 94%;
+    --muted-foreground: 208 7% 46%; /* Stone Gray #6C757D */
 
-    --accent: var(--brand-light-green);
-    --accent-foreground: 0 0% 100%;
+    --accent: var(--brand-clear-blue);
+    --accent-foreground: 210 17% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 17% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: var(--brand-bright-green);
+    --border: 210 14% 89%; /* Light Border #DEE2E6 */
+    --input: 210 14% 89%;
+    --ring: var(--brand-clear-blue);
 
     --radius: 0.75rem;
 
     /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: var(--brand-bright-green);
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--brand-midnight);
+    --sidebar-foreground: 210 17% 95%;
+    --sidebar-primary: var(--brand-evergreen);
+    --sidebar-primary-foreground: 210 17% 98%;
+    --sidebar-accent: 210 50% 28%;
+    --sidebar-accent-foreground: 210 17% 95%;
+    --sidebar-border: 210 50% 28%;
+    --sidebar-ring: var(--brand-clear-blue);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Corporate Neutrals */
+    --background: 205 22% 15%; /* Deep Slate #1C252C */
+    --foreground: 210 17% 95%; /* Light Text #F1F3F5 */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 205 22% 18%;
+    --card-foreground: 210 17% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 205 22% 18%;
+    --popover-foreground: 210 17% 95%;
 
-    --primary: var(--brand-bright-green);
-    --primary-foreground: 0 0% 100%;
+    --primary: var(--brand-evergreen-light);
+    --primary-foreground: 205 22% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 205 22% 20%;
+    --secondary-foreground: 210 17% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 205 22% 20%;
+    --muted-foreground: 212 9% 70%; /* Mid Gray #ADB5BD */
 
-    --accent: var(--brand-light-green);
-    --accent-foreground: 0 0% 100%;
+    --accent: var(--brand-clear-blue);
+    --accent-foreground: 205 22% 15%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 17% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: var(--brand-bright-green);
+    --border: 205 22% 25%;
+    --input: 205 22% 25%;
+    --ring: var(--brand-clear-blue);
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: var(--brand-bright-green);
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 205 22% 12%;
+    --sidebar-foreground: 210 17% 95%;
+    --sidebar-primary: var(--brand-evergreen-light);
+    --sidebar-primary-foreground: 205 22% 15%;
+    --sidebar-accent: 205 22% 20%;
+    --sidebar-accent-foreground: 210 17% 95%;
+    --sidebar-border: 205 22% 25%;
+    --sidebar-ring: var(--brand-clear-blue);
   }
 }
 
@@ -104,34 +106,52 @@
   }
 }
 
-/* Utilities & component tokens */
+/* Corporate Utilities & Components */
 @layer utilities {
   .bg-gradient-brand {
-    background-image: linear-gradient(135deg, hsl(var(--brand-dark-green)) 0%, hsl(var(--brand-light-green)) 100%);
+    background-image: linear-gradient(135deg, hsl(var(--brand-evergreen-dark)) 0%, hsl(var(--brand-evergreen)) 100%);
   }
   .text-gradient-brand {
-    background-image: linear-gradient(135deg, hsl(var(--brand-dark-green)) 0%, hsl(var(--brand-light-green)) 100%);
+    background-image: linear-gradient(135deg, hsl(var(--brand-evergreen)) 0%, hsl(var(--brand-clear-blue)) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-  .shadow-brand-glow {
-    box-shadow: 0 10px 30px -10px hsl(var(--brand-bright-green) / 0.35), 0 6px 18px -8px hsl(var(--brand-light-green) / 0.25);
+  .shadow-corporate {
+    box-shadow: 0 10px 30px -10px hsl(var(--brand-evergreen) / 0.2), 0 6px 18px -8px hsl(var(--brand-clear-blue) / 0.15);
   }
   .bg-gradient-hero {
-    background-image: linear-gradient(135deg, hsl(var(--brand-dark-green)) 0%, hsl(var(--brand-light-green)) 100%);
+    background-image: linear-gradient(135deg, hsl(var(--brand-midnight)) 0%, hsl(var(--brand-evergreen)) 100%);
   }
-  .bg-charcoal {
-    background-color: hsl(var(--brand-charcoal));
+  .bg-midnight {
+    background-color: hsl(var(--brand-midnight));
+  }
+  .bg-evergreen {
+    background-color: hsl(var(--brand-evergreen));
+  }
+  .bg-clear-blue {
+    background-color: hsl(var(--brand-clear-blue));
+  }
+  .bg-amber-cta {
+    background-color: hsl(var(--brand-amber));
+  }
+  .text-evergreen {
+    color: hsl(var(--brand-evergreen));
+  }
+  .text-clear-blue {
+    color: hsl(var(--brand-clear-blue));
+  }
+  .border-evergreen {
+    border-color: hsl(var(--brand-evergreen));
   }
 }
 
 @layer components {
-  /* Signature spotlight background used in hero */
+  /* Corporate spotlight effect */
   .spotlight {
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), hsl(var(--brand-bright-green) / 0.15), transparent 60%);
+    background: radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), hsl(var(--brand-clear-blue) / 0.1), transparent 60%);
     pointer-events: none;
     transition: background 150ms ease-out;
   }
