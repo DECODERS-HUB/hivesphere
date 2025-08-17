@@ -18,11 +18,13 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Corporate variants
-        hero: "bg-gradient-hero text-primary-foreground shadow-corporate hover:brightness-110 active:brightness-95",
+        // Glassmorphism variants
+        hero: "bg-gradient-primary text-primary-foreground shadow-lg hover:scale-105 active:scale-95 transition-all duration-200",
+        glass: "glass-card text-foreground hover:bg-white/30 transition-all duration-200",
+        coral: "bg-coral text-white hover:bg-coral/90 hover-glow rounded-xl",
+        yellow: "bg-yellow text-evergreen-dark hover:bg-yellow/90 hover-lift rounded-xl",
+        skyblue: "bg-sky-blue text-white hover:bg-sky-blue/90 hover-lift rounded-xl",
         subtle: "bg-muted text-foreground hover:bg-muted/80",
-        corporate: "bg-evergreen text-primary-foreground hover:bg-evergreen/90 shadow-sm",
-        cta: "bg-amber-cta text-foreground hover:bg-amber-cta/90 shadow-sm font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

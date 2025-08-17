@@ -61,7 +61,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Hivesphere brand colors
+				evergreen: {
+					DEFAULT: 'hsl(var(--brand-evergreen))',
+					dark: 'hsl(var(--brand-evergreen-dark))',
+					light: 'hsl(var(--brand-evergreen-light))'
+				},
+				coral: 'hsl(var(--brand-coral))',
+				yellow: 'hsl(var(--brand-yellow))',
+				'sky-blue': 'hsl(var(--brand-sky-blue))',
+				lilac: 'hsl(var(--brand-lilac))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
